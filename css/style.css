@@ -16,3 +16,15 @@
 #search-icon {
   height: 5vh;
 }
+
+.icon {
+  width: 23px;
+}
+
+#submit {
+  background-color: #0C979B;
+  border: none;
+  border-radius: 100px;
+  height: 50px;
+  width: 50px;
+}
