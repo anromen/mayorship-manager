@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.topbar {
+  background-color: #0C979B;
+  display: flex;
+  justify-content: center;
+  height: 7vh;
+  padding: 1vh;
+  width: 100vw;
+}
+
+#search-icon {
+  height: 5vh;
+}
