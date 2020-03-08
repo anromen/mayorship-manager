@@ -1,1 +1,1 @@
-<?php require ('views/index.view.php'); 
+<?php require ('views/person.view.php'); 

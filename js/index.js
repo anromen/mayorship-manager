@@ -58,10 +58,10 @@
     
     render() {
       return (
-        <form>
+        <form action="view/person.view.php">
           <SelectForm value={this.state.selected} onChange={this.handleSelect}/>
           <input type={this.state.type} value={this.state.message} onChange={this.handleInput} />
-          <button type="submit" id="submit"><img class="icon" src="../images/send.svg" /></button>
+          <button type="submit" id="submit"><img className="icon" src="../images/send.svg" /></button>
         </form>
       );
     }
