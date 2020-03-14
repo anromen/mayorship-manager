@@ -6,6 +6,14 @@
   padding: 0;
 }
 
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+#root {
+  padding: 5vh 5vw;
+}
+
 .topbar {
   background-color: #0C979B;
   display: flex;
@@ -29,4 +37,45 @@
   border-radius: 100px;
   height: 50px;
   width: 50px;
+}
+
+.column {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.result-top {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 1vw;
+  margin-bottom: 5vh;
+  width: 100%;
+}
+
+.content {
+  justify-content: space-between;
+}
+
+.central {
+  width: 70%;
+}
+
+.central > h2,
+.side > h2 {
+  margin-bottom: 1vh;
+  width: 100%;
+}
+
+.side {
+  width: 30%;
+}
+
+.header {
+  width: 100%;
+  margin-bottom: 1vw;
+}
+
+.column-2 {
+  width: 20%;
 }
