@@ -48,24 +48,40 @@
     );
   }
 
-  function Person() {
+  function Person(props) {
+    let details;
+    let attributes = [];
+    let values = [];
+
+    const age = (new Date() - new Date('2000 01 05')) / 31536000000).toFixed(0);
+    if(age < 7) {
+      details = props.details.institution;
+      attributes = ["Empresa", "Cargo", "Jornada", "Sueldo"];
+      values = [details.name, details.name, details.name, details.name]
+    } else if (age > 7 && age < 18) {
+
+    } else {
+
+    }
+
+
     return (
       <div className="content column">
         <Header
-          name="Juan Carlos Moreno Martínez"
+          name={props.name}
           attributes={[
             "Documento",
             "Lugar de nacimiento",
             "Fecha de nacimiento"
           ]}
-          values={["10101010", "Bogotá, Colombia", "18 / 02 / 1975"]}
+          values={[props.document, props.birth_place, props.birth_day]}
         />
         <div className="central column">
           <ExtraInfo
             title="Información laboral"
             attributes={["Empresa", "Cargo", "Jornada", "Sueldo"]}
             values={[
-              "Unidos S.A.S",
+              props.details.Institution,
               "Operario de máquina",
               "Diurna",
               "$2.000.000"
@@ -97,19 +113,6 @@
         />
 
         <div className="central column">
-          <ExtraInfo
-            title="Familia"
-            attributes={["Empresa", "Cargo", "Jornada", "Sueldo"]}
-            values={[
-              "Unidos S.A.S",
-              "Operario de máquina",
-              "Diurna",
-              "$2.000.000"
-            ]}
-          />
-        </div>
-
-        <div className="side">
           <ExtraInfo
             title="Familiares"
             values={[
