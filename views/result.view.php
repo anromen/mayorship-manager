@@ -5,6 +5,6 @@
 
 <?php require('templates/scripts.view.php') ?>
 
-<script src="../../js/person.js" type="text/babel"></script>
+<script src="js/result.js" type="text/babel"></script>
 
 <?php require('templates/footer.view.php'); ?>

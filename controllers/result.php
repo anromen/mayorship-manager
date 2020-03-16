@@ -1,3 +1,3 @@
 <?php 
 
-require 'views/person.view.php';
+require 'views/result.view.php';
