@@ -1,10 +1,9 @@
 <?php
 
-$router->define([
-  '' => 'controllers/index.php',
-  'persona' => 'controllers/result.php',
-  'familia' => 'controllers/result.php',
-  'barrio' => 'controllers/result.php',
-  'entidad' => 'controllers/result.php',
-  'alcalde' => 'controllers/mayor.php'
-]);
+$router->get('', 'controllers/index.php');
+$router->get('persona', 'controllers/result.php');
+$router->get('familia', 'controllers/result.php');
+$router->get('barrio', 'controllers/result.php');
+$router->get('entidad', 'controllers/result.php');
+$router->get('alcalde', 'controllers/mayor.php');
+$router->get('funcionario', 'controllers/edit.php');

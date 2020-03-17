@@ -84,3 +84,13 @@ body {
 .column-2 {
   width: 20%;
 }
+
+.mayor-info {
+  text-align: center;
+  width: 33%;
+}
+
+.stat {
+  font-size: 8rem;
+  margin-bottom: 20px;
+}

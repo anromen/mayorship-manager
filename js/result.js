@@ -147,6 +147,13 @@
             values={props.family.members.map(member => member.name)}
           />
         </div>
+
+        <div className="side">
+          <ExtraInfo
+            title="Rutas"
+            values={props.person.routes.map(route => route.name)}
+          />
+        </div>
       </div>
     );
   }
