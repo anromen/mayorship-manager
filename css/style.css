@@ -67,6 +67,11 @@ body {
   width: 100%;
 }
 
+.central > p {
+  display: block;
+  width: 100%;
+}
+
 .side {
   width: 30%;
 }

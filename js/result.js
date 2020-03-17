@@ -49,110 +49,141 @@
   }
 
   function Person(props) {
-    let details;
-    let attributes = [];
-    let values = [];
+    const age = (
+      (new Date() - new Date(props.person.birth_day)) /
+      31536000000
+    ).toFixed(0);
+    console.log(age);
 
-    const age = (new Date() - new Date('2000 01 05')) / 31536000000).toFixed(0);
-    if(age < 7) {
-      details = props.details.institution;
-      attributes = ["Empresa", "Cargo", "Jornada", "Sueldo"];
-      values = [details.name, details.name, details.name, details.name]
-    } else if (age > 7 && age < 18) {
+    const institution = props.person.details.institution;
+    const diseases = props.person.details.diseases;
+    let attributes;
+    let values;
+    let title;
 
-    } else {
-
+    if (institution) {
+      title =
+        age >= 7 && age < 18 ? "Información académica" : "Información laboral";
+      attributes =
+        age >= 7 && age < 18
+          ? ["Escuela", "Tipo", "Jornada", "Grado"]
+          : ["Empresa", "Cargo", "Jornada", "Sueldo"];
+      values =
+        age >= 7 && age < 18
+          ? [
+              institution.name,
+              institution.type,
+              institution.hours,
+              institution.course
+            ]
+          : [
+              institution.name,
+              institution.position,
+              institution.hours,
+              institution.wage
+            ];
+    } else if (diseases) {
+      title = "Enfermedades";
+      attributes = diseases.map(disease => disease.date);
+      values = diseases.map(disease => disease.name);
     }
 
+    console.log(props.person.details.diseases);
+    console.log(values);
 
     return (
       <div className="content column">
         <Header
-          name={props.name}
+          name={props.person.name}
           attributes={[
             "Documento",
             "Lugar de nacimiento",
             "Fecha de nacimiento"
           ]}
-          values={[props.document, props.birth_place, props.birth_day]}
+          values={[
+            props.person.document,
+            props.person.birth_place,
+            props.person.birth_day
+          ]}
         />
         <div className="central column">
           <ExtraInfo
-            title="Información laboral"
-            attributes={["Empresa", "Cargo", "Jornada", "Sueldo"]}
-            values={[
-              props.details.Institution,
-              "Operario de máquina",
-              "Diurna",
-              "$2.000.000"
-            ]}
+            title={title}
+            attributes={attributes}
+            values={values}
           />
+          {diseases && (
+            <ExtraInfo
+              title="Enfermedades"
+              attributes={diseases.map(disease => disease.date)}
+              values={diseases.map(disease => disease.name)}
+            />
+          )}
+          }
         </div>
 
         <div className="side">
           <ExtraInfo
             title="Familiares"
-            values={[
-              "Sandra marcela Bohorquez Caro",
-              "Sara Martínez Bohorquez",
-              "Juan Martínez Bohorquez"
-            ]}
+            values={props.person.family.map(person => person.name)}
           />
         </div>
       </div>
     );
   }
 
-  function Family() {
+  function Family(props) {
     return (
       <div className="content column">
         <Header
-          name="Calle siempre viva"
+          name={props.family.name}
           attributes={["Teléfono", "Tipo de vivienda", "Ingreso familiar"]}
-          values={["3121564", "Casa", "$3.000.000"]}
+          values={[props.family.phone, props.family.type, props.family.income]}
         />
 
         <div className="central column">
           <ExtraInfo
             title="Familiares"
-            values={[
-              "Carlos José Martínez Castillo",
-              "Sandra marcela Bohorquez Caro",
-              "Sara Martínez Bohorquez",
-              "Juan Martínez Bohorquez"
-            ]}
+            values={props.family.members.map(member => member.name)}
           />
         </div>
       </div>
     );
   }
 
-  function Neighborhood() {
+  function Neighborhood(props) {
     return (
       <div className="content column">
         <Header
-          name="Chapinero"
+          name={props.neighborhood.name}
           attributes={["Área", "Tipo", "Estrato"]}
-          values={["Centro", "Comercial", "4"]}
+          values={[
+            props.neighborhood.area,
+            props.neighborhood.type,
+            props.neighborhood.stratum
+          ]}
         />
 
         <div className="central">
           <ExtraInfo
             title="Entidades"
-            values={["Unidos S.A.S", "Industrias Capital", "Banana Code"]}
+            values={props.neighborhood.institutions.map(entity => entity.name)}
           />
         </div>
       </div>
     );
   }
 
-  function Institution() {
+  function Institution(props) {
     return (
       <div className="content column">
         <Header
-          name="Rappi"
+          name={props.institution.name}
           attributes={["Barrio", "Actividad económica"]}
-          values={["Chapinero", "Privada"]}
+          values={[
+            props.institution.neighborhood.name,
+            props.institution.activity
+          ]}
         />
       </div>
     );
@@ -161,13 +192,13 @@
   function App() {
     switch (window.location.pathname.replace(/^\/|\/$/g, "")) {
       case "persona":
-        return <Person />;
+        return <Person person={} />;
       case "familia":
-        return <Family />;
+        return <Family family={} />;
       case "barrio":
-        return <Neighborhood />;
+        return <Neighborhood neighborhood={} />;
       case "entidad":
-        return <Institution />;
+        return <Institution institution={} />;
     }
   }
 

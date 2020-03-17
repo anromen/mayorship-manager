@@ -5,5 +5,6 @@ $router->define([
   'persona' => 'controllers/result.php',
   'familia' => 'controllers/result.php',
   'barrio' => 'controllers/result.php',
-  'entidad' => 'controllers/result.php'
+  'entidad' => 'controllers/result.php',
+  'alcalde' => 'controllers/mayor.php'
 ]);
