@@ -107,11 +107,7 @@
           ]}
         />
         <div className="central column">
-          <ExtraInfo
-            title={title}
-            attributes={attributes}
-            values={values}
-          />
+          <ExtraInfo title={title} attributes={attributes} values={values} />
           {diseases && (
             <ExtraInfo
               title="Enfermedades"
@@ -119,7 +115,6 @@
               values={diseases.map(disease => disease.name)}
             />
           )}
-          }
         </div>
 
         <div className="side">
@@ -136,7 +131,7 @@
     return (
       <div className="content column">
         <Header
-          name={props.family.name}
+          name={props.family.address}
           attributes={["Teléfono", "Tipo de vivienda", "Ingreso familiar"]}
           values={[props.family.phone, props.family.type, props.family.income]}
         />
@@ -145,13 +140,6 @@
           <ExtraInfo
             title="Familiares"
             values={props.family.members.map(member => member.name)}
-          />
-        </div>
-
-        <div className="side">
-          <ExtraInfo
-            title="Rutas"
-            values={props.person.routes.map(route => route.name)}
           />
         </div>
       </div>
@@ -177,6 +165,13 @@
             values={props.neighborhood.institutions.map(entity => entity.name)}
           />
         </div>
+
+        <div className="side">
+          <ExtraInfo
+            title="Rutas"
+            values={props.neighborhood.routes.map(route => route.name)}
+          />
+        </div>
       </div>
     );
   }
@@ -197,15 +192,17 @@
   }
 
   function App() {
+
+    console.log(jsonFamily);
     switch (window.location.pathname.replace(/^\/|\/$/g, "")) {
       case "persona":
-        return <Person person={} />;
+        return <Person person={jsonPerson} />;
       case "familia":
-        return <Family family={} />;
+        return <Family family={jsonFamily} />;
       case "barrio":
-        return <Neighborhood neighborhood={} />;
+        return <Neighborhood neighborhood={jsonNeighborhood} />;
       case "entidad":
-        return <Institution institution={} />;
+        return <Institution institution={jsonInstitution} />;
     }
   }
 

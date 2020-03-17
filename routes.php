@@ -1,6 +1,7 @@
 <?php
 
 $router->get('', 'controllers/index.php');
+$router->get('redirect', 'controllers/redirect.php');
 $router->get('persona', 'controllers/result.php');
 $router->get('familia', 'controllers/result.php');
 $router->get('barrio', 'controllers/result.php');

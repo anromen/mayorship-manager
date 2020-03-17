@@ -6,10 +6,10 @@
         <label>
           ¿Qué estás buscando? <br />
           <select name="search" value={props.value} onChange={props.onChange}>
-            <option value="person">Persona</option>
-            <option value="family">Familia</option>
-            <option value="neighborhood">Barrio</option>
-            <option value="institution">Institución</option>
+            <option value="persona">Persona</option>
+            <option value="familia">Familia</option>
+            <option value="barrio">Barrio</option>
+            <option value="entidad">Institución</option>
           </select>
         </label>
     );
@@ -23,7 +23,7 @@
       this.handleInput = this.handleInput.bind(this);
 
       this.state = {
-        selected: "person",
+        selected: "persona",
         message: "1010101010",
         type: "text"
       }
@@ -35,7 +35,7 @@
       this.setState({
         selected: target,
         message: this.getMessage(target),
-        type: (target === "person") ? "number" : "text"
+        type: (target === "persona") ? "number" : "text"
       });
     }
 
@@ -45,20 +45,20 @@
 
     getMessage(target) {
       switch(target) {
-        case 'person':
+        case 'persona':
           return "1010101010";
-        case 'family':
+        case 'familia':
           return "Calle 94 #53-18";
-        case 'neighborhood':
+        case 'barrio':
           return "Chapinero";
-        case 'institution':
+        case 'entidad':
           return "Universidad Distrital"
       }
     }
     
     render() {
       return (
-        <form action="view/person.view.php">
+        <form action="redirect">
           <SelectForm value={this.state.selected} onChange={this.handleSelect}/>
           <input type={this.state.type} value={this.state.message} onChange={this.handleInput} />
           <button type="submit" id="submit"><img className="icon" src="../images/send.svg" /></button>
