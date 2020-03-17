@@ -2,10 +2,9 @@
   "use strict";
 
   const fields = {
-    person: ["name", "document", "birth_place", "birth_day", "address"],
-    neighborhood: ["name", "area", "type", "birth_day", "address"],
-    family: ["name", "document", "birth_place", "birth_day", "address"],
-    institution: ["name", "document", "birth_place", "birth_day", "address"]
+    person: ["name", "document", "birth_place", "address"],
+    institution: ["name", "address", "phone", "activity", "neighborhood"],
+    family: ["phone", "income", "address"]
   };
 
   function DinamicField(props) {
@@ -35,7 +34,7 @@
 
   function SelectForm(props) {
     return (
-      <form method="get">
+      <form>
         <select name="method" value={props.method} onChange={props.onMethodChange}>
           <option value="create">Crear</option>
           <option value="edit">Editar</option>
@@ -43,7 +42,6 @@
         <select name="search" value={props.consult} onChange={props.onSearchChange}>
           <option value="person">Persona</option>
           <option value="family">Familia</option>
-          <option value="neighborhood">Barrio</option>
           <option value="institution">Institución</option>
         </select>
         {props.method === "edit" && <input type="text"></input>}
@@ -72,14 +70,13 @@
     render() {
       return (
         <div>
-          <h1>Hello, official</h1>
           <SelectForm 
             method={this.state.method} 
             consult={this.state.consult} 
             onMethodChange={this.onMethodChange}
             onSearchChange={this.onSearchChange}
           />
-          {/* <CreationForm /> */}
+          <CreationForm consult={this.state.consult}/>
         </div>
       );
     }
