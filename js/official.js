@@ -92,9 +92,11 @@
     };
 
     onInputChange = event => {
+      const url = '';
+
       this.setState({ 
         value: event.target.value,
-        element: '' //hacer la consulta en este punto
+        element: await fetch(url) //hacer la consulta en este punto
       });
     };
 
