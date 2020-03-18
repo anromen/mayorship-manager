@@ -166,12 +166,14 @@
           />
         </div>
 
-        <div className="side">
-          <ExtraInfo
-            title="Rutas"
-            values={props.neighborhood.routes.map(route => route.name)}
-          />
-        </div>
+        {props.neighborhood.routes &&
+          <div className="side">
+            <ExtraInfo
+              title="Rutas"
+              values={props.neighborhood.routes.map(route => route.name)}
+            />
+          </div>
+        }
       </div>
     );
   }

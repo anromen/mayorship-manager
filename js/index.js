@@ -3,7 +3,7 @@
   
   function SelectForm(props) {
     return (
-        <label>
+        <label className="select">
           ¿Qué estás buscando? <br />
           <select name="search" value={props.value} onChange={props.onChange}>
             <option value="persona">Persona</option>
@@ -58,17 +58,26 @@
     
     render() {
       return (
-        <form action="redirect">
+        <form action="redirect" className="center-form">
           <SelectForm value={this.state.selected} onChange={this.handleSelect}/>
-          <input type={this.state.type} value={this.state.message} onChange={this.handleInput} />
-          <button type="submit" id="submit"><img className="icon" src="../images/send.svg" /></button>
+          <input type={this.state.type} value={this.state.message} onChange={this.handleInput} className="big-input"/>
+          <button type="submit" id="submit" className="icon-button"><img className="icon" src="../images/send.svg" /></button>
         </form>
       );
     }
   }
 
+  function App() {
+    return (
+      <div className="full-page">
+        <h1>MEJORAMOS PARA TI</h1>
+        <ConsultForm />
+      </div>
+    );
+  }
+
   ReactDOM.render(
-    <ConsultForm />,
+    <App />,
     document.getElementById('root')
   );
 })();

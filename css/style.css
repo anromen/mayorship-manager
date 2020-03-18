@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
 
 * {
   box-sizing: border-box;
@@ -94,3 +95,84 @@ body {
   font-size: 8rem;
   margin-bottom: 20px;
 }
+
+.full-page {
+  position: relative;
+  bottom: 5vh;
+  right: 5vw;
+  width: 95vw;
+  height: 95vh;
+  padding: 25vh 25vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.full-page > h1 {
+  font-family: 'Paytone One', sans-serif;
+  font-size: 3rem;
+  width: 100%;
+
+}
+
+.center-form {
+  width: 100%;
+}
+
+.select > select {
+  height: 50px;
+  width: 20%;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  margin-top: 10px;
+}
+
+.big-input {
+  width: 70%;
+  height: 50px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.central-form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px 35%;
+}
+
+.create-input {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.create-input > input {
+  width: 100%;
+  margin-bottom: 10px;
+} 
+
+.submit-button {
+  height: 30px;
+  width: 20%;
+  color: white;
+  background-color: #0C979B;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.multi-secondary {
+  height: 30px;
+}
+
+.hidden-input {
+  height: 30px;
+}
+
+
