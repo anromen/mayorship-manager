@@ -1,8 +1,8 @@
 (function() {
-  'use strict';
+  "use strict";
 
   function Stat(props) {
-    return(
+    return (
       <div class="mayor-info">
         <h2 className="stat">{props.stat}</h2>
         <p className="stat-description">{props.description}</p>
@@ -13,15 +13,17 @@
   function App() {
     return (
       <div className="content column">
-        <Stat stat="89" description="niños muriendose de hambre"/>
-        <Stat stat="89" description="niños muriendose de hambre"/>
-        <Stat stat="89" description="niños muriendose de hambre"/>
+        <Stat
+          stat={
+            /*En estos espacios se agrega la variable tomada de mayor.view.php*/
+          }
+          description="salario promedio de las personas."
+        />
+        <Stat stat={} description="salario promedio de las personas." />
+        <Stat stat={} description="enfermedad más frecuente." />
       </div>
     );
   }
 
-  ReactDOM.render(
-    <App />,
-    document.getElementById('root')
-  );
+  ReactDOM.render(<App />, document.getElementById("root"));
 })();

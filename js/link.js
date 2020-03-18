@@ -5,27 +5,77 @@
     if (props.age >= 18) {
       return (
         <React.Fragment>
-          <input type="text" name="name" value="nombre" className="link-input"/>
-          <input type="text" name="hours" value="jornada" className="link-input"/>
-          <input type="text" name="position" value="posición" className="link-input"/>
-          <input type="text" name="wage" value="$10000" className="link-input"/>
+          <input
+            type="text"
+            name="name"
+            value="nombre"
+            className="link-input"
+          />
+          <input
+            type="text"
+            name="hours"
+            value="jornada"
+            className="link-input"
+          />
+          <input
+            type="text"
+            name="position"
+            value="posición"
+            className="link-input"
+          />
+          <input
+            type="text"
+            name="wage"
+            value="$10000"
+            className="link-input"
+          />
         </React.Fragment>
       );
     } else if (props.age < 18 && props.age >= 7) {
       return (
         <React.Fragment>
-          <input type="text" name="name" value="nombre" className="link-input" />
-          <input type="text" name="hours" value="jornada" className="link-input" />
-          <input type="text" name="course" value="curso" className="link-input" />
+          <input
+            type="text"
+            name="name"
+            value="nombre"
+            className="link-input"
+          />
+          <input
+            type="text"
+            name="hours"
+            value="jornada"
+            className="link-input"
+          />
+          <input
+            type="text"
+            name="course"
+            value="curso"
+            className="link-input"
+          />
           <input type="text" name="type" value="tipo" className="link-input" />
         </React.Fragment>
       );
     } else {
       return (
         <React.Fragment>
-          <input type="text" name="name" value="nombre" className="link-input" />
-          <input type="text" name="hours" value="jornada" className="link-input" />
-          <input type="text" name="course" value="curso" className="link-input" />
+          <input
+            type="text"
+            name="name"
+            value="nombre"
+            className="link-input"
+          />
+          <input
+            type="text"
+            name="hours"
+            value="jornada"
+            className="link-input"
+          />
+          <input
+            type="text"
+            name="course"
+            value="curso"
+            className="link-input"
+          />
         </React.Fragment>
       );
     }
@@ -51,7 +101,11 @@
     render() {
       return (
         <form className="central-form">
-          <input type="text" onChange={this.onInputChange} className="link-input"></input>
+          <input
+            type="text"
+            onChange={this.onInputChange}
+            className="link-input"
+          ></input>
           <select
             name="search"
             value={this.state.value}
@@ -65,9 +119,19 @@
             )}
           </select>
           {this.state.value === "address" ? (
-            <input type="text" name="address" value="dirección" className="link-input"/>
+            <input
+              type="text"
+              name="address"
+              value="dirección"
+              className="link-input"
+            />
           ) : this.state.value === "disease" ? (
-            <input type="text" name="disease" value="enfermedad" className="link-input"/>
+            <input
+              type="text"
+              name="disease"
+              value="enfermedad"
+              className="link-input"
+            />
           ) : (
             <InstitutionInput age={this.state.person.age} />
           )}

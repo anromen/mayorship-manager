@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Paytone+One&display=swap");
 
 * {
   box-sizing: border-box;
@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 #root {
@@ -16,7 +16,7 @@ body {
 }
 
 .topbar {
-  background-color: #0C979B;
+  background-color: #0c979b;
   display: flex;
   justify-content: center;
   height: 7vh;
@@ -33,7 +33,7 @@ body {
 }
 
 #submit {
-  background-color: #0C979B;
+  background-color: #0c979b;
   border: none;
   border-radius: 100px;
   height: 50px;
@@ -111,10 +111,9 @@ body {
 }
 
 .full-page > h1 {
-  font-family: 'Paytone One', sans-serif;
+  font-family: "Paytone One", sans-serif;
   font-size: 3rem;
   width: 100%;
-
 }
 
 .center-form {
@@ -155,13 +154,13 @@ body {
 .create-input > input {
   width: 100%;
   margin-bottom: 10px;
-} 
+}
 
 .submit-button {
   height: 30px;
   width: 20%;
   color: white;
-  background-color: #0C979B;
+  background-color: #0c979b;
   border: none;
   border-radius: 5px;
   margin-top: 20px;
@@ -187,5 +186,3 @@ body {
   height: 35px;
   margin: 0 0 20px 0;
 }
-
-
